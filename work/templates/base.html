@@ -1,0 +1,90 @@
+ 
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JobFinder</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+<body>
+
+    {% block content %}{% endblock%}
+    
+		<footer>
+			<div class="wrapper">
+				<div class="footer-box">
+					<div class="company-footer">
+						<img src="../static/img/logo.png">
+						<h2>JobFinder</h2>
+						<p>A maneira mais fácil de encontrar seu próximo emprego.</p>
+					</div>
+				</div>
+				<div class="footer-box">
+					<div class="articles-footer">
+						<h2>Artigos rescentes</h2>
+						<ul class="footer-list footer-article-list">
+							<li>
+								<a href="#">Como conseguir o primeiro emprego em tempos de crise?</a>
+								<span class="article-date">05 de fevereiro de 2019</span>
+							</li>
+							<li>
+								<a href="#">Como conseguir o primeiro emprego em tempos de crise?</a>
+								<span class="article-date">05 de fevereiro de 2019</span>
+							</li>
+							<li>
+								<a href="#">Como conseguir o primeiro emprego em tempos de crise?</a>
+								<span class="article-date">05 de fevereiro de 2019</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-box">
+					<h2>Nos encontre nas redes sociais</h2>
+					<ul class="footer-list">
+						<li>
+							<a href="#">
+								<i class="fab fa-facebook-square"></i>
+								<span>Facebook</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fab fa-instagram"></i>
+								<span>Instagram</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fab fa-linkedin"></i>
+								<span>Linkedin</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="wrapper">
+					<p>horaDeCodar - 2019</p>
+				</div>
+			</div>
+		</footer>
+</div>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
