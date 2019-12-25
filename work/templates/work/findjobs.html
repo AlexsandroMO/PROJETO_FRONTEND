@@ -1,0 +1,105 @@
+
+margin- ma      
+{% extends 'base.html' %}
+
+{% block title %}FindJob2{% endblock %}
+
+{% block content %}
+
+	<div class="container" id="findjobs">
+		<header>
+			<nav>
+				<div class="nav-container">
+                    <a href="/">
+                        <img id="logo" src="../static/img/logo.png" alt="JobFinder">
+                    </a>
+					<!--<i class="fas fa-bars btn-menumobile"></i>-->
+					<ul>
+						<li><a href="{% url 'work-find-jobs' %}">Encontrar vaga</a></li>
+						<li><a href="{% url 'work-job' %}">Enviar vaga</a></li>
+						<li><a href="#">Contato</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+        <main id="lastjobs-container" class="wrapper">
+			<h1>Busque a sua vaga</h1>
+			<div id="job-filter">
+				<div id="search-form">
+
+					<form method="POST">
+                    {% csrf_token %}
+                        <input type="text" name="job" placeholder="Digite o cargo">
+                        <select name="region">
+                            <option value="">Todos os estados</option>
+                        </select>
+                        <select name="category">
+                            <option value="">Categoria</option>
+                        </select>
+                        <input type="submit" value="Pesquisar">
+					</form>
+				</div>
+				<div id="type-filter">
+					<ul>
+						<li>
+							<input type="checkbox" checked><label>CLT</label>
+						</li>
+						<li>
+							<input type="checkbox" checked><label>PJ</label>
+						</li>
+						<li>
+							<input type="checkbox" checked><label>Home Office</label>
+						</li>
+						<li>
+							<input type="checkbox" checked><label>Free Lancer</label>
+						</li>
+					</ul>	
+				</div>
+			</div>
+			<ul>
+    
+                {% for item_a in result %}
+      
+				<li>
+					<a href="{% url 'work-job' %}" class="clickarea" name="job">
+
+                   <input type="text" name="job" placeholder="{{item_a.1}}" value='{{item_a.1}}'>
+                
+						<div class="company-box">
+							<img src="../static/img/googlelogo.png">
+                            
+							<div class="company-info">
+								<h3>{{item_a.0}}</h3>
+								<p>Google</p>
+							</div>
+                            </div>
+                            <div class="locality">
+       							<i class="fas fa-map-marker-alt"></i>
+							    <p>ID Vaga: {{item_a.1}}</p>
+                            </div>
+                            
+						<div class="job-type">
+							<span class="clt">
+                            {% for i in item_a.3 %}
+                            {{i}}
+                            {% endfor %}
+                            </span>
+						</div>
+					</a>
+				</li>
+                {% endfor %}
+				
+			</ul>
+			<div class="btnjobs-container">
+				<a href="#" class="btn-jobs">Carregar mais vagas</a>
+			</div>
+		</main>
+
+
+        {% for i in 0..cont %}
+            {{result.i.0}}
+        {% endfor %}
+
+
+
+{% endblock %}
